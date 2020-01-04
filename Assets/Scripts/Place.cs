@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Place : MonoBehaviour
 {
+    [SerializeField] private GameObject _endPosition;
+
     private void OnEnable()
     {
         Invoke("Deactivate", 30f);
@@ -12,5 +14,10 @@ public class Place : MonoBehaviour
     private void Deactivate()
     {
         gameObject.SetActive(false);
+    }
+
+    public Vector3 GetEndPosition()
+    {
+        return _endPosition.transform.position;
     }
 }
