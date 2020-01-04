@@ -597,7 +597,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1134587781}
-        m_MethodName: Play
+        m_MethodName: PlayButtonClickHandler
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1101,7 +1101,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1134587781}
-        m_MethodName: ChangeContorl
+        m_MethodName: ShowCreatorslButtonClickHandler
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1234,7 +1234,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1134587781}
-        m_MethodName: Exit
+        m_MethodName: ExitButtonClickHandlert
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

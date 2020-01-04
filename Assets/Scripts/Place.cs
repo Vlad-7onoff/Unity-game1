@@ -9,7 +9,7 @@ public class Place : MonoBehaviour
         Invoke("Deactivate", 30f);
     }
 
-    void Deactivate()
+    private void Deactivate()
     {
         gameObject.SetActive(false);
     }

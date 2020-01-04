@@ -6,9 +6,9 @@ public class Coin : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.TryGetComponent(out PlayerController player))
         {
-            collision.GetComponent<PlayerController>().PickUpCoin();
+            player.PickUpCoin();
             gameObject.SetActive(false);
         }
     }

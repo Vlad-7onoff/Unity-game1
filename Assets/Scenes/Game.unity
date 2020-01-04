@@ -423,9 +423,9 @@ GameObject:
   m_Component:
   - component: {fileID: 354723295}
   - component: {fileID: 354723294}
+  - component: {fileID: 354723298}
   - component: {fileID: 354723297}
   - component: {fileID: 354723296}
-  - component: {fileID: 354723298}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -496,7 +496,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &354723296
+--- !u!114 &354723296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354723293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f077eb97c1b14f44788aaee5e21fb753, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CoinDisplay: {fileID: 1901705330}
+  MoveSpeed: 3
+  JumpForce: 5.5
+  WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 512
+  _grounded: 0
+--- !u!58 &354723297
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -512,7 +531,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!50 &354723297
+--- !u!50 &354723298
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -533,25 +552,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &354723298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 354723293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f077eb97c1b14f44788aaee5e21fb753, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CoinDisplay: {fileID: 1901705330}
-  MoveSpeed: 3
-  JumpForce: 5.5
-  WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 512
-  _grounded: 0
 --- !u!1001 &412782778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -735,8 +735,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad17fd571379615469ea319c2c57019d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 354723293}
-  Speed: 3
+  _target: {fileID: 354723293}
+  _speed: 3
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -928,7 +928,8 @@ MonoBehaviour:
   - {fileID: 2309972634934740675, guid: 11c4200f36d6b024db5895e0e87cb593, type: 3}
   - {fileID: 5404913547282872701, guid: 531c633054afcb34b9fb4f51d8a6fa67, type: 3}
   - {fileID: 4600019680953158961, guid: b2bb669fb2d4c764cb0ca39c743101f3, type: 3}
-  _player: {fileID: 354723298}
+  _player: {fileID: 354723296}
+  _playerDistanceSpawnLevelPart: 30
 --- !u!4 &584374351
 Transform:
   m_ObjectHideFlags: 0
