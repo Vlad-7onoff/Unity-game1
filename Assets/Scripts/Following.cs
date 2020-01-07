@@ -1,18 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Following : MonoBehaviour
 {
     [SerializeField] private GameObject _target;
     [SerializeField] private float _speed;
+    [SerializeField] private float _cameraPositionY;
+    [SerializeField] private float _cameraPositionZ;
 
-    private float _cameraPositionY = 0;
-    private float _cameraPositionZ = -10;
-
-    void Update()
+    private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, TargetPosition(), _speed) ;
+        transform.position = Vector3.MoveTowards(transform.position, TargetPosition(), _speed * Time.deltaTime) ;
     }
 
     private Vector3 TargetPosition()
