@@ -3,15 +3,16 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
-    [SerializeField] private Transform _levelPartStart;
+    [SerializeField] private Place _place;
     [SerializeField] private List<Transform> _levelParts;
     [SerializeField] private Player _player;
-    [SerializeField] private float _playerDistanceSpawnLevelPart;
+    [SerializeField] private float _spawnDistance;
+
     private Vector3 _lastEndPosition;
 
     private void Awake()
     {
-        _lastEndPosition = _levelPartStart.GetComponent<Place>().GetEndPosition();
+        _lastEndPosition = _place.GetEndPosition();
 
         int startingPartsCount = 2;
 
@@ -23,7 +24,7 @@ public class LevelGenerator : MonoBehaviour
 
     private void Update()
     {
-        if (Vector2.Distance(_player.transform.position, _lastEndPosition) < _playerDistanceSpawnLevelPart)
+        if (Vector2.Distance(_player.transform.position, _lastEndPosition) < _spawnDistance)
         {
             SpawnLevelPart();
         }

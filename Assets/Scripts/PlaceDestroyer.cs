@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 
-public class Destroyer : MonoBehaviour
+public class PlaceDestroyer : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.TryGetComponent(out Place place))
         {
             place.Deactivate();

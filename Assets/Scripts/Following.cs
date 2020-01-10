@@ -2,10 +2,8 @@
 
 public class Following : MonoBehaviour
 {
-    [SerializeField] private GameObject _target;
+    [SerializeField] private Transform _target;
     [SerializeField] private float _speed;
-    [SerializeField] private float _cameraPositionY;
-    [SerializeField] private float _cameraPositionZ;
 
     private void Update()
     {
@@ -14,6 +12,6 @@ public class Following : MonoBehaviour
 
     private Vector3 TargetPosition()
     {
-        return new Vector3(_target.transform.position.x, _cameraPositionY, _cameraPositionZ);
+        return new Vector3(_target.transform.position.x, transform.position.y, transform.position.z);
     }
 }
