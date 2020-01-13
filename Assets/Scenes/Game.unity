@@ -1015,13 +1015,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff09803ced8f38a4c874aac29e9dc63b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _place: {fileID: 0}
+  _place: {fileID: 2141835198}
   _levelParts:
   - {fileID: 2309972634934740675, guid: 11c4200f36d6b024db5895e0e87cb593, type: 3}
   - {fileID: 5404913547282872701, guid: 531c633054afcb34b9fb4f51d8a6fa67, type: 3}
   - {fileID: 4600019680953158961, guid: b2bb669fb2d4c764cb0ca39c743101f3, type: 3}
   _player: {fileID: 354723296}
-  _spawnDistance: 0
+  _spawnDistance: 30
 --- !u!4 &584374351
 Transform:
   m_ObjectHideFlags: 0

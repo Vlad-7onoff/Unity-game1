@@ -7,7 +7,7 @@ public class Following : MonoBehaviour
 
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, TargetPosition(), _speed * Time.deltaTime) ;
+        transform.position = Vector3.MoveTowards(transform.position, TargetPosition(), _speed * Time.deltaTime);
     }
 
     private Vector3 TargetPosition()
