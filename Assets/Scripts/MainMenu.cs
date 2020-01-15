@@ -5,17 +5,17 @@ public class MainMenu : MonoBehaviour
 {
     public Animator ControllAnimator;
 
-    public void PlayButtonClick()
+    public void OnPlayButtonClick()
     {
         SceneManager.LoadScene("Game");
     }
 
-    public void ShowCreatorslButtonClick()
+    public void OnShowCreatorslButtonClick()
     {
         ControllAnimator.SetBool("IsOpen", !ControllAnimator.GetBool("IsOpen"));
     }
 
-    public void ExitButtonClick()
+    public void OnExitButtonClick()
     {
         Application.Quit();
     }
