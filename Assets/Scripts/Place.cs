@@ -1,13 +1,8 @@
 ﻿using UnityEngine;
 
-public class Place : MonoBehaviour
+public class Place : Deactivatable
 {
     [SerializeField] private Transform _endPosition;
-
-    public void Deactivate()
-    {
-        gameObject.SetActive(false);
-    }
 
     public Vector3 GetEndPosition()
     {

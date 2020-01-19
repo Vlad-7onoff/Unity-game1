@@ -18,7 +18,6 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-
         _collider2D = GetComponent<Collider2D>();
     }
 

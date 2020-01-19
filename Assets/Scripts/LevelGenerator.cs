@@ -4,14 +4,17 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] private Place _place;
-    [SerializeField] private List<Transform> _levelParts;
+    [SerializeField] private List<Place> _levelParts;
     [SerializeField] private Player _player;
     [SerializeField] private float _spawnDistance;
+    [SerializeField] private PlaceDetector _placeDetector;
 
     private Vector3 _lastEndPosition;
 
     private void Awake()
     {
+        _placeDetector.PlaceDetecting += OnPlaceDetecting;
+
         _lastEndPosition = _place.GetEndPosition();
 
         int startingPartsCount = 2;
@@ -32,14 +35,19 @@ public class LevelGenerator : MonoBehaviour
 
     private void SpawnLevelPart()
     {
-        Transform chosenLevelPart = _levelParts[Random.Range(0, _levelParts.Count)] ;
-        Transform lastLevelPartTransform = SpawnLevelPart(chosenLevelPart, _lastEndPosition);
+        Transform chosenLevelPart = _levelParts[Random.Range(0, _levelParts.Count)].transform;
+        Transform levelPartTransform = Instantiate(chosenLevelPart, _lastEndPosition, Quaternion.identity);
+        Transform lastLevelPartTransform = levelPartTransform;
         _lastEndPosition = lastLevelPartTransform.GetComponent<Place>().GetEndPosition();
     }
 
-    private Transform SpawnLevelPart(Transform levelPart, Vector3 spawnPosition)
+    private void OnPlaceDetecting(Place place)
     {
-        Transform levelPartTransform = Instantiate(levelPart, spawnPosition, Quaternion.identity);
-        return levelPartTransform;
+        place.Deactivate();
+    }
+
+    private void OnDestroy()
+    {
+        _placeDetector.PlaceDetecting -= OnPlaceDetecting;
     }
 }

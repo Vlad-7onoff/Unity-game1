@@ -1,18 +1,13 @@
 ﻿using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class Coin : Deactivatable
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent(out Player player))
         {
             player.PickUpCoin();
-            gameObject.SetActive(false);
+            Deactivate();
         }
-    }
-
-    public void Deactivate()
-    {
-        gameObject.SetActive(false);
     }
 }
