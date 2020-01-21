@@ -13,8 +13,6 @@ public class LevelGenerator : MonoBehaviour
 
     private void Awake()
     {
-        _placeDetector.PlaceDetecting += OnPlaceDetecting;
-
         _lastEndPosition = _place.GetEndPosition();
 
         int startingPartsCount = 2;
@@ -46,7 +44,12 @@ public class LevelGenerator : MonoBehaviour
         place.Deactivate();
     }
 
-    private void OnDestroy()
+    private void OnEnable()
+    {
+        _placeDetector.PlaceDetecting += OnPlaceDetecting;
+    }
+
+    private void OnDisable()
     {
         _placeDetector.PlaceDetecting -= OnPlaceDetecting;
     }
